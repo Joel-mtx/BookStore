@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert a new book</title>
+</head>
+<body>
+<form th:object="${newBook}" th:action="@{/update/{id}(id=${newBook.id})}" method="POST">
+Title: <input name="title" size="20" th:field="*{title}"> <br />
+Author: <input name="author" size="20" th:field="*{author}"> <br />
+Genre: <input name="genre" size="20" th:field="*{genre}"> <br />
+Store Name: <input name="location.name" size="20" th:field="*{location.name}"> <br />
+Store Id; <input name="location.storeId" size="20" th:field="*{location.storeId}"> <br />
+Adress: <input name="location.address" size="20" th:field="*{location.address}"> <br />
+City: <input name="location.city" size="20" th:field="*{location.city}"> <br />
+State: <input name="location.state" size="20" th:field="*{location.state}"> <br />
+Zipcode: <input name="location.zipCode" size="20" th:field="*{location.zipCode}"> <br />
+<input name="submit" type="submit" value="Submit"/>
+</form>
+<a href="viewAll">View All Books</a>
+</body>
+</html>
